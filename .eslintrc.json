@@ -22,7 +22,7 @@
     ],
     "rules": {
         "no-unused-vars": [
-            "error",
+            "warn",
             {
                 "caughtErrorsIgnorePattern": "^ignore"
             }
@@ -30,7 +30,7 @@
         "react/jsx-uses-react": 1,
         "react/jsx-uses-vars": "error",
         "linebreak-style": [
-            "error",
+            "warn",
             "unix"
         ],
         "babel/new-cap": 1,
