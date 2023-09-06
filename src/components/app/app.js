@@ -7,6 +7,8 @@ import StatusFilter from "../post-status-filter";
 import PostList from "../post-list";
 import PostAddForm from "../post-add-form";
 
+import './app.css';
+
 const App = () => {
     return (
         <div className="app">
