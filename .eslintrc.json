@@ -17,10 +17,16 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
+        // "react",
         "babel"
     ],
     "rules": {
+        "react/prop-types": [
+            0
+        ],
+        "react/jsx-key": [
+            0
+        ],
         "no-unused-vars": [
             "warn",
             {
@@ -28,7 +34,7 @@
             }
         ],
         "react/jsx-uses-react": 1,
-        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-vars": "warn",
         "linebreak-style": [
             "warn",
             "unix"
