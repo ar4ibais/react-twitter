@@ -10,7 +10,7 @@ padding: 20px 35px 10px 35px;
 margin-top: 10px;
 `;
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, onDelete }) => {
     return (
         <ListGroup style={{ marginTop: "50px" }}>
             {
@@ -19,7 +19,7 @@ const PostList = ({ posts }) => {
                         <PostListItem
                             label={post.label}
                             important={post.important}
-                            onDelete={() => console.log('Deleted')}
+                            onDelete={() => onDelete(post.id)}
                         />
                     </ListItem>
                 ))

@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-const FormBlock = styled.form`
+const FormBlock = styled.div`
 display: flex;
 margin-top: 20px;
 input {
@@ -12,7 +12,7 @@ input {
   }
 `;
 
-const PostAddForm = () => {
+const PostAddForm = ({ onAdd }) => {
     return (
         <FormBlock>
             <input
@@ -23,6 +23,7 @@ const PostAddForm = () => {
             <button
                 type="submit"
                 className="btn btn-outline-secondary"
+                onClick={() => onAdd('Hello')}
             >
                 Добавить
             </button>
