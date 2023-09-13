@@ -1,13 +1,23 @@
 import React from "react";
 
-import './post-add-form.css';
+import styled from "styled-components";
+
+const FormBlock = styled.form`
+display: flex;
+margin-top: 20px;
+input {
+    width: auto;
+    flex-grow: 1;
+    margin-right: 3px;
+  }
+`;
 
 const PostAddForm = () => {
     return (
-        <form className="bottom-panel d-flex">
+        <FormBlock>
             <input
                 type="text"
-                placeholder="О чем Вы думаете?"
+                placeholder="О чем Вы думаете сейчас?"
                 className="form-control new-post-label"
             />
             <button
@@ -16,8 +26,8 @@ const PostAddForm = () => {
             >
                 Добавить
             </button>
-        </form>
-    );
-};
+        </FormBlock>
+    )
+}
 
 export default PostAddForm;
