@@ -22,7 +22,8 @@ class App extends Component {
                 { label: 'That is so good', important: false, like: false, id: 2 },
                 { label: 'I need a break...', important: false, like: false, id: 3 },
             ],
-            term: ''
+            term: '',
+            filter: 'all'
         }
         this.maxId = 4;
     }
@@ -82,16 +83,26 @@ class App extends Component {
         }
         return items.filter(item => item.label.indexOf(term) > -1)
     }
+    fliterPost = (items, filter) => {
+        if (filter == 'like') {
+            return items.filter(item => item.like)
+        } else {
+            return items;
+        }
+    }
     onUpdateSearch = (term) => {
         this.setState({ term })
     }
+    onFilterSelect = (filter) => {
+        this.setState({ filter })
+    }
     render() {
-        const { data, term } = this.state;
+        const { data, term, filter } = this.state;
 
         const liked = data.filter(item => item.like).length;
         const allPosts = data.length;
 
-        const visiblPosts = this.searchPost(data, term);
+        const visiblPosts = this.fliterPost(this.searchPost(data, term), filter);
 
         return (
             <AppBlock>
@@ -103,7 +114,10 @@ class App extends Component {
                     <SearchPanel
                         onUpdateSearch={this.onUpdateSearch}
                     />
-                    <PostStatusFilter />
+                    <PostStatusFilter
+                        filter={this.state.filter}
+                        onFilterSelect={this.onFilterSelect}
+                    />
                 </div>
                 <PostList
                     posts={visiblPosts}
