@@ -10,7 +10,7 @@ padding: 20px 35px 10px 35px;
 margin-top: 10px;
 `;
 
-const PostList = ({ posts, onDelete }) => {
+const PostList = ({ posts, onDelete, onToggleImportant, onToggleLiked }) => {
     return (
         <ListGroup style={{ marginTop: "50px" }}>
             {
@@ -19,7 +19,10 @@ const PostList = ({ posts, onDelete }) => {
                         <PostListItem
                             label={post.label}
                             important={post.important}
+                            like={post.like}
                             onDelete={() => onDelete(post.id)}
+                            onToggleLiked={() => onToggleLiked(post.id)}
+                            onToggleImportant={() => onToggleImportant(post.id)}
                         />
                     </ListItem>
                 ))

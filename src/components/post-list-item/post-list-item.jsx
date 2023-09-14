@@ -3,38 +3,15 @@ import React, { Component } from "react";
 import "./post-list-item.css";
 
 class PostListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            important: false,
-            like: false
-        }
-        this.onImportant = this.onImportant.bind(this);
-        this.onLike = this.onLike.bind(this);
-    }
-
-    onImportant() {
-        this.setState(({ important }) => ({
-            important: !important
-        }))
-    }
-
-    onLike() {
-        this.setState(({ like }) => ({
-            like: !like
-        }))
-    }
 
     render() {
 
-        const { label, onDelete } = this.props;
-        const { important, like } = this.state;
+        const { label, onDelete, onToggleImportant, onToggleLiked, important, like } = this.props;
         let classNames = "app-list-item d-flex justify-content-between";
 
         if (important) {
             classNames += ' important';
         }
-
         if (like) {
             classNames += ' like';
         }
@@ -43,7 +20,7 @@ class PostListItem extends Component {
             <div className={classNames}>
                 <span
                     className="app-list-item-label"
-                    onDoubleClick={this.onLike}
+                    onDoubleClick={onToggleLiked}
                 >
                     {label}
                 </span>
@@ -51,7 +28,7 @@ class PostListItem extends Component {
                     <button
                         type="button"
                         className="btn-star btn-sm"
-                        onClick={this.onImportant}>
+                        onClick={onToggleImportant}>
                         <i className="fa fa-star"></i>
                     </button>
                     <button
