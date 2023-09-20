@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-twitter/static/css/main.c3ce9985.css",
+    "main.js": "/react-twitter/static/js/main.8ab85300.js",
+    "index.html": "/react-twitter/index.html",
+    "main.c3ce9985.css.map": "/react-twitter/static/css/main.c3ce9985.css.map",
+    "main.8ab85300.js.map": "/react-twitter/static/js/main.8ab85300.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3ce9985.css",
+    "static/js/main.8ab85300.js"
+  ]
+}
